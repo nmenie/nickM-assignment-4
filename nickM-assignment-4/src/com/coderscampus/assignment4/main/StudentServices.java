@@ -12,9 +12,7 @@ public class StudentServices {
 	public Students[] getStudentsFromFile() {
 		BufferedReader fileReader = null;
 		Students[] s = new Students[100];
-		Students[] stat = new Students[33];
-		Students[] apmth = new Students[34];
-		Students[] compsci = new Students[33];
+
 		int i = 0;
 
 		try {
@@ -24,9 +22,6 @@ public class StudentServices {
 			fileReader.readLine();
 			while ((line = fileReader.readLine()) != null) {
 
-
-				
-		
 				String[] student = line.split(",");
 				Students stud = studentServices(student);
 				s[i] = stud;
@@ -54,30 +49,10 @@ public class StudentServices {
 		String name = student[1];
 		String course = student[2];
 		int grade = Integer.parseInt(student[3]);
-		
+
 		Students students = new Students(id, name, course, grade);
-	
 
 		return students;
 	}
 
-	BufferedWriter writer = null;
-	{
-
-		try {
-			writer = new BufferedWriter(new FileWriter("sudent-master-list.csv"));
-
-		} catch (IOException e1) {
-			e1.printStackTrace();
-
-		} finally {
-			if (writer != null)
-				try {
-					writer.close();
-				} catch (IOException e) {
-
-					e.printStackTrace();
-				}
-		}
-	}
 }

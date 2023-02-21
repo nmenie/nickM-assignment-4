@@ -6,34 +6,9 @@ public class Students implements Comparable<Students> {
 	private String course;
 	private Integer id;
 	private Integer grade;
-	private String stat;
-	private String apmth;
-	private String compsci;
 	
 
-	public String getStat() {
-		return stat;
-	}
 
-	public void setStat(String stat) {
-		this.stat = stat;
-	}
-
-	public String getApmth() {
-		return apmth;
-	}
-
-	public void setApmth(String apmth) {
-		this.apmth = apmth;
-	}
-
-	public String getCompsci() {
-		return compsci;
-	}
-
-	public void setCompsci(String compsci) {
-		this.compsci = compsci;
-	}
 
 	public String getName() {
 		return name;
@@ -99,7 +74,10 @@ public class Students implements Comparable<Students> {
 
 	@Override
 	public String toString() {
-		return "Students [name=" + name + ", course=" + course + ", id=" + id + ", grade=" + grade + ", stat=" + stat
-				+ ", apmth=" + apmth + ", compsci=" + compsci + "]";
+		return "Students [name=" + name + ", course=" + course + ", id=" + id + ", grade=" + grade + "]";
 	}
+
+	
+
+
 }
