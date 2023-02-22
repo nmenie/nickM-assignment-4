@@ -13,9 +13,8 @@ public class SortingStudents {
 
 		StudentServices studentServices = new StudentServices();
 		Students[] s = studentServices.getStudentsFromFile();
-//		Students[] p = studentServices.separatingStudents();
 
-		Students[] compsci = new Students[35];
+		Students[] compsci = new Students[34];
 		Students[] stat = new Students[33];
 		Students[] apmth = new Students[33];
 		int comp1 = 0;
@@ -48,32 +47,42 @@ public class SortingStudents {
 		BufferedWriter writer = null;
 
 		writer = new BufferedWriter(new FileWriter("course1.csv"));
+
+		writer.write("Student Id,Student Name,Course,Grade \n");
+
 		for (int i = 0; i < compsci.length; i++) {
 
-			writer.write(compsci[i] + "\n" + ", ");
+			writer.write(compsci[i].getId() + "," + compsci[i].getName() + "," + compsci[i].getCourse() + ","
+					+ compsci[i].getGrade());
 			writer.newLine();
+
 		}
 		writer.close();
-		
+
 		writer = new BufferedWriter(new FileWriter("course2.csv"));
+
+		writer.write("Student Id,Student Name,Course,Grade \n");
+
 		for (int i = 0; i < stat.length; i++) {
 
-			writer.write(stat[i] + "\n" + ", ");
+			writer.write(stat[i].getId() + "," + stat[i].getName() + "," + stat[i].getCourse() + ","
+					+ stat[i].getGrade());
 			writer.newLine();
 		}
 		writer.close();
-		
+
 		writer = new BufferedWriter(new FileWriter("course3.csv"));
+
+		writer.write("Student Id,Student Name,Course,Grade \n");
+
 		for (int i = 0; i < apmth.length; i++) {
 
-			writer.write(apmth[i] + "\n" + ", ");
+			writer.write(apmth[i].getId() + "," + apmth[i].getName() + "," + apmth[i].getCourse() + ","
+					+ apmth[i].getGrade());
 			writer.newLine();
 		}
 		writer.close();
 
-
 	}
-
-
 
 }
